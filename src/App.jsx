@@ -1,9 +1,13 @@
+//components
+import Navbar from "./components/Navbar";
+
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <p>hello there</p>
+      <Navbar />
+      <p className="m-8">hello there</p>
     </div>
   );
 }
