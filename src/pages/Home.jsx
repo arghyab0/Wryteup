@@ -1,13 +1,16 @@
 //components
 import Navbar from "../components/Navbar";
-import Header from "../components/Header";
+import Cover from "../components/Cover";
+import Articles from "../components/Articles";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <Header />
-      This is the home page
+      <Cover />
+      <Articles />
+      <Footer />
     </>
   );
 };
