@@ -1,7 +1,7 @@
 //components
 import Navbar from "../components/Navbar";
 import Cover from "../components/Cover";
-import Articles from "../components/Articles";
+import Listings from "../components/Listings";
 import Footer from "../components/Footer";
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
     <>
       <Navbar />
       <Cover />
-      <Articles />
+      <Listings />
       <Footer />
     </>
   );

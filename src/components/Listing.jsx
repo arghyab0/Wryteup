@@ -1,4 +1,4 @@
-const Article = () => {
+const Listing = () => {
   return (
     <>
       <div className="mx-4 my-6">
@@ -15,4 +15,4 @@ const Article = () => {
   );
 };
 
-export default Article;
+export default Listing;
