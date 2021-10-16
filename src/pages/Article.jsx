@@ -1,13 +1,11 @@
 //components
-import Navbar from "../components/Navbar";
 import { HiPencilAlt, HiOutlineTrash } from "react-icons/hi";
 import ReactMarkdown from "react-markdown";
 
 const Article = () => {
   return (
     <>
-      <Navbar />
-      <div className="flex justify-center py-10 ">
+      <div className="flex w-3/5 mx-auto py-10 border-gray-900 border-2">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit iste
         fuga, nam, magnam modi enim quo
       </div>
@@ -28,7 +26,7 @@ const Article = () => {
             <HiOutlineTrash className="text-2xl cursor-pointer" />
           </span>
         </div>
-        <div className=" mt-14 border-gray-900 border-2 pb-64">
+        <div className="mt-14 border-gray-900 border-2 pb-64">
           <ReactMarkdown>
             # hello world **Lorem** ipsum dolor sit amet, consectetur
             adipisicing elit. Temporibus explicabo, ea delectus culpa ullam
