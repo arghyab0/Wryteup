@@ -10,8 +10,8 @@ const Article = require("../models/Article");
 router.get("/:id", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
-    const { password, ...rest } = user;
-    res.status(200).json(user);
+    const { password, ...rest } = user._doc;
+    res.status(200).json(rest);
   } catch (err) {
     res.status(500).json(err);
   }
