@@ -1,6 +1,6 @@
 //components
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router";
+import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import { HiPencilAlt, HiOutlineTrash } from "react-icons/hi";
 import ReactMarkdown from "react-markdown";
@@ -43,7 +43,7 @@ const Article = () => {
           <span className="">
             image
             <br />
-            {article.username}
+            <Link to={`/?user=${article.username}`}>{article.username}</Link>
             <br />
             {new Date(article.createdAt).toDateString()}
           </span>
