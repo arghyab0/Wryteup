@@ -40,4 +40,4 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/articles", articlesRoute);
 
-app.listen("5000", () => console.log("Server running at port 5000..."));
+app.listen("3080", () => console.log("Server running at port 3080..."));
