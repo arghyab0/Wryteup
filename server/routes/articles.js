@@ -16,12 +16,28 @@ router.post("/", async (req, res) => {
   }
 });
 
-//get article
+//get all articles
+router.get("/", async (req, res) => {
+  const username = req.query.user;
+  try {
+    let articles;
+    if (username) {
+      articles = await Article.find({ username }); //same as -> articles = await Article.find({username: username})
+    } else {
+      articles = await Article.find();
+    }
+
+    res.status(200).json(articles);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//get one article
 router.get("/:id", async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
-    const { password, ...rest } = user._doc;
-    res.status(200).json(rest);
+    const article = await Article.findById(req.params.id);
+    res.status(200).json(article);
   } catch (err) {
     res.status(500).json(err);
   }
