@@ -6,7 +6,11 @@ import { FiSearch } from "react-icons/fi";
 import { Context } from "../context/Context";
 
 const Navbar = () => {
-  const { user } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
 
   return (
     <div className="w-screen h-32 top-0 flex items-center bg-red-200">
@@ -20,7 +24,11 @@ const Navbar = () => {
           <li className="mx-4 cursor-pointer">Write</li>
           {!user && <li className="mx-4 cursor-pointer">Register</li>}
           {!user && <li className="mx-4 cursor-pointer">Login</li>}
-          {user && <li className="mx-4 cursor-pointer">Logout</li>}
+          {user && (
+            <li className="mx-4 cursor-pointer" onClick={handleLogout}>
+              Logout
+            </li>
+          )}
         </ul>
       </div>
 

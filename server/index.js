@@ -6,6 +6,7 @@ const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const multer = require("multer");
+const path = require("path");
 
 //routes
 const authRoute = require("./routes/auth");
@@ -15,8 +16,9 @@ const articlesRoute = require("./routes/articles");
 //get mongo url
 dotenv.config();
 
-//json middleware
+//middleware
 app.use(express.json());
+app.use("/images", express.static(path.join(__dirname, "/images")));
 
 //mongoose connection
 mongoose

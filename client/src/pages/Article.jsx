@@ -10,6 +10,9 @@ const Article = () => {
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
 
+  //cover image
+  const imageFolder = "http://localhost:3080/images/";
+
   useEffect(() => {
     const getArticle = async () => {
       const res = await axios.get("/articles/" + pathId);
@@ -27,7 +30,7 @@ const Article = () => {
         {article.cover ? (
           <img
             className="w-screen h-full object-cover"
-            src={article.cover}
+            src={imageFolder + article.cover}
             alt="blog cover"
           />
         ) : (
