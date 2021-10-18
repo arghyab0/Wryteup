@@ -1,6 +1,6 @@
 //components
 import { useContext } from "react";
-import { FiSearch } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 //context
 import { Context } from "../context/Context";
@@ -33,14 +33,15 @@ const Navbar = () => {
       </div>
 
       <div className="flex mx-10 items-center">
-        {user && (
-          <img
-            src="https://media.voguebusiness.com/photos/5ef6493adf1073db3375835d/2:3/w_2560%2Cc_limit/kanye-west-gap-news-voguebus-mert-alas-and-marcus-piggott-june-20-story.jpg"
-            alt="profile"
-            className="w-12 h-12 rounded-full object-cover"
-          />
-        )}
-        <FiSearch className="ml-4 text-2xl font-bold cursor-pointer" />
+        <Link to="/account">
+          {user && (
+            <img
+              src={user.displayImg}
+              alt="Account"
+              className="w-12 h-12 rounded-full object-cover"
+            />
+          )}
+        </Link>
       </div>
     </div>
   );
