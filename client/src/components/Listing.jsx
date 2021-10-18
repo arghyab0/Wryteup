@@ -2,11 +2,14 @@
 import { Link } from "react-router-dom";
 
 const Listing = ({ article }) => {
+  //cover image folder
+  const imageFolder = "http://localhost:3080/images/";
+
   return (
     <>
       <div className="mx-4 my-6 border-2">
         <img
-          src="https://i.pinimg.com/originals/54/ae/a9/54aea96a8a7e61acc6aabdc89ff17b2a.jpg"
+          src={imageFolder + article.cover}
           alt=""
           className="w-72 h-40 object-cover"
         />

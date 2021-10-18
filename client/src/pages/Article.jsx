@@ -10,7 +10,7 @@ const Article = () => {
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
 
-  //cover image
+  //cover image folder
   const imageFolder = "http://localhost:3080/images/";
 
   useEffect(() => {
