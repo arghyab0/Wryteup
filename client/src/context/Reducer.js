@@ -12,7 +12,6 @@ const Reducer = (state, action) => {
 
     default:
       return state;
-      break;
   }
 };
 

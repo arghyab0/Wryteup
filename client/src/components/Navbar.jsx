@@ -1,8 +1,12 @@
 //components
+import { useContext } from "react";
 import { FiSearch } from "react-icons/fi";
 
+//context
+import { Context } from "../context/Context";
+
 const Navbar = () => {
-  const user = true;
+  const { user } = useContext(Context);
 
   return (
     <div className="w-screen h-32 top-0 flex items-center bg-red-200">

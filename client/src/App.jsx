@@ -1,4 +1,5 @@
 //components
+import { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //pages
@@ -10,10 +11,13 @@ import Account from "./pages/Account";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
+//context
+import { Context } from "./context/Context";
+
 // import "./App.css";
 
 function App() {
-  const user = false;
+  const { user } = useContext(Context);
 
   return (
     <Router>
