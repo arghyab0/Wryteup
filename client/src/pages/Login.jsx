@@ -18,8 +18,6 @@ const Login = () => {
           Login
         </button>
       </form>
-
-      <button className="border-2">Register</button>
     </>
   );
 };
