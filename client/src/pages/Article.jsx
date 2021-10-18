@@ -1,14 +1,19 @@
 //components
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import { HiPencilAlt, HiOutlineTrash } from "react-icons/hi";
 import ReactMarkdown from "react-markdown";
 
+//context
+import { Context } from "../context/Context";
+
 const Article = () => {
   const [article, setArticle] = useState({});
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
+
+  const { user } = useContext(Context);
 
   //cover image folder
   const imageFolder = "http://localhost:3080/images/";
@@ -20,6 +25,17 @@ const Article = () => {
     };
     getArticle();
   }, [pathId]);
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete("/articles/" + pathId, {
+        data: { username: user.username },
+      });
+      window.location.replace("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
@@ -50,10 +66,15 @@ const Article = () => {
             <br />
             {new Date(article.createdAt).toDateString()}
           </span>
-          <span className="flex">
-            <HiPencilAlt className="text-2xl cursor-pointer" />
-            <HiOutlineTrash className="text-2xl cursor-pointer" />
-          </span>
+          {article.username === user?.username && (
+            <span className="flex">
+              <HiPencilAlt className="text-2xl cursor-pointer" />
+              <HiOutlineTrash
+                className="text-2xl cursor-pointer"
+                onClick={handleDelete}
+              />
+            </span>
+          )}
         </div>
         <div className="mt-14 border-gray-900 border-2 pb-64">
           <ReactMarkdown>{article.desc}</ReactMarkdown>

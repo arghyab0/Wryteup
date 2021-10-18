@@ -14,7 +14,7 @@ const Listing = ({ article }) => {
           className="w-72 h-40 object-cover"
         />
         <div className="flex-col items-center my-4 cursor-pointer">
-          <Link to={`/article/${article._id}`}> {article.title} </Link>
+          <Link to={`/articles/${article._id}`}> {article.title} </Link>
         </div>
       </div>
     </>
