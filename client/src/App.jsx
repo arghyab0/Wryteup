@@ -14,8 +14,6 @@ import Register from "./pages/Register";
 //context
 import { Context } from "./context/Context";
 
-// import "./App.css";
-
 function App() {
   const { user } = useContext(Context);
 

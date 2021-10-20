@@ -1,15 +1,18 @@
+//assets
+import { ReactComponent as CoverImage } from "../assests/cover.svg";
+
 const Cover = () => {
   return (
     <>
-      <div className="w-screen h-auto pt-16 pb-10 bg-blue-400">
-        <div className="flex justify-center h-96 border-2">
-          this is the image
+      <div className="w-screen h-auto pt-20 pb-4">
+        <div className="w-3/5 mx-auto">
+          <CoverImage />
         </div>
-        <div className="flex justify-center pb-10 border-2">
-          thsi is the title
+        <div className="w-3/5 mx-auto py-10 font-heading font-bold text-5xl text-center">
+          A few words about this blog platform and how this site was made
         </div>
-        <div className="flex justify-center pb-6 border-b-2">
-          thsi si the sub
+        <div className="w-2/5 mx-auto pb-8 font-ui text-xl text-center border-black border-b-2">
+          Why I made this platform and what I learned?
         </div>
       </div>
     </>
