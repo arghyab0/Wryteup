@@ -8,6 +8,12 @@ module.exports = {
         heading: ["DM Serif Display"],
         ui: ["Work Sans"],
       },
+      colors: {
+        black: {
+          bg: "#1c1c1e",
+          DEFAULT: "#000",
+        },
+      },
     },
   },
   variants: {
