@@ -7,18 +7,20 @@ const Listing = ({ article }) => {
 
   return (
     <>
-      <div className="mx-4 my-6 border-2">
-        <img
-          src={imageFolder + article.cover}
-          alt="article cover"
-          className="w-80 h-40 object-cover"
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src =
-              "https://www.adobe.com/content/dam/cc/us/en/creativecloud/illustration-adobe-illustration/vector-art/desktop/vector-art_P1_900x420.jpg.img.jpg";
-          }}
-        />
-        <div className="flex-col items-center my-4 cursor-pointer">
+      <div className="my-6">
+        <Link to={`/articles/${article._id}`}>
+          <img
+            src={imageFolder + article.cover}
+            alt="Article cover"
+            className="w-80 h-44 object-cover cursor-pointer"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src =
+                "https://www.adobe.com/content/dam/cc/us/en/creativecloud/illustration-adobe-illustration/vector-art/desktop/vector-art_P1_900x420.jpg.img.jpg";
+            }}
+          />
+        </Link>
+        <div className="w-4/5 mx-auto my-6 text-center font-ui text-xl cursor-pointer">
           <Link to={`/articles/${article._id}`}> {article.title} </Link>
         </div>
       </div>
