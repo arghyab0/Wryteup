@@ -42,6 +42,4 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/articles", articlesRoute);
 
-app.listen(process.env.PORT || 3080, () =>
-  console.log("Server running at port 3080...")
-);
+app.listen("3080", () => console.log("Server running at port 3080..."));
