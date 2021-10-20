@@ -10,8 +10,13 @@ const Listing = ({ article }) => {
       <div className="mx-4 my-6 border-2">
         <img
           src={imageFolder + article.cover}
-          alt=""
-          className="w-72 h-40 object-cover"
+          alt="article cover"
+          className="w-80 h-40 object-cover"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src =
+              "https://www.adobe.com/content/dam/cc/us/en/creativecloud/illustration-adobe-illustration/vector-art/desktop/vector-art_P1_900x420.jpg.img.jpg";
+          }}
         />
         <div className="flex-col items-center my-4 cursor-pointer">
           <Link to={`/articles/${article._id}`}> {article.title} </Link>

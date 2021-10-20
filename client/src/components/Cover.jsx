@@ -4,7 +4,7 @@ import { ReactComponent as CoverImage } from "../assests/cover.svg";
 const Cover = () => {
   return (
     <>
-      <div className="w-screen h-auto pt-20 pb-4">
+      <div className="w-screen pt-20 pb-4">
         <div className="w-3/5 mx-auto">
           <CoverImage />
         </div>
