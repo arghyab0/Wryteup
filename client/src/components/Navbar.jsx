@@ -13,35 +13,49 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-screen h-32 top-0 flex items-center bg-red-200">
-      <div className="flex mx-8">
-        <h1 className="text-3xl font-extrabold">Wryteup</h1>
+    <div className="w-screen h-32 top-0 flex items-center border-b border-gray-300">
+      <div className="mx-12">
+        <h1 className="text-6xl font-heading">Wryteup</h1>
       </div>
 
-      <div className="flex-auto">
-        <ul className="flex justify-center list-none">
-          <li className="mx-4 cursor-pointer">Home</li>
-          <li className="mx-4 cursor-pointer">Write</li>
-          {!user && <li className="mx-4 cursor-pointer">Register</li>}
-          {!user && <li className="mx-4 cursor-pointer">Login</li>}
+      <div className="flex w-screen justify-end items-center mx-10 ">
+        <ul className="inline-flex list-none font-heading text-2xl ">
+          <li className="mx-4">
+            <Link to="/">HOME</Link>
+          </li>
+          <li className="mx-4">
+            <Link to="/write">WRITE</Link>
+          </li>
+          {!user && (
+            <li className="mx-4">
+              <Link to="/register">REGISTER</Link>
+            </li>
+          )}
+          {!user && (
+            <li className="mx-4">
+              <Link to="/login">LOGIN</Link>
+            </li>
+          )}
           {user && (
-            <li className="mx-4 cursor-pointer" onClick={handleLogout}>
-              Logout
+            <li className="mx-4" onClick={handleLogout}>
+              LOGOUT
             </li>
           )}
         </ul>
-      </div>
-
-      <div className="flex mx-10 items-center">
-        <Link to="/account">
-          {user && (
+        {user && (
+          <Link to="/account">
             <img
               src={user.displayImg}
               alt="Account"
-              className="w-12 h-12 rounded-full object-cover"
+              className="inline-flex w-14 h-14 mx-4 rounded-full object-cover"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src =
+                  "https://animade.imgix.net/Plus-Plus%E2%80%94Teasers-0-00-26-09.png?crop=focalpoint&domain=animade.imgix.net&fit=crop&fm=pjpg&fp-x=0.5&fp-y=0.5&h=1450&ixlib=php-3.3.1&q=82&usm=20&w=1450";
+              }}
             />
-          )}
-        </Link>
+          </Link>
+        )}
       </div>
     </div>
   );

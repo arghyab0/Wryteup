@@ -4,6 +4,9 @@ import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import { HiPencilAlt, HiOutlineTrash } from "react-icons/hi";
 import ReactMarkdown from "react-markdown";
+import ArticleHeading from "../components/ArticleHeading";
+import ArticleCover from "../components/ArticleCover";
+import Footer from "../components/Footer";
 
 //context
 import { Context } from "../context/Context";
@@ -14,9 +17,6 @@ const Article = () => {
   const pathId = location.pathname.split("/")[2];
 
   const { user } = useContext(Context);
-
-  //cover image folder
-  const imageFolder = "http://localhost:3080/images/";
 
   useEffect(() => {
     const getArticle = async () => {
@@ -39,27 +39,12 @@ const Article = () => {
 
   return (
     <>
-      <div className="flex w-3/5 mx-auto py-10 border-gray-900 border-2">
-        {article.title}
-      </div>
-      <div>
-        {article.cover ? (
-          <img
-            className="w-screen h-full object-cover"
-            src={imageFolder + article.cover}
-            alt="blog cover"
-          />
-        ) : (
-          <img
-            className="w-screen h-full object-cover"
-            src="https://resi.ze-robot.com/dl/4k/4k-desktop-wallpaper.-2560%C3%971080.jpg"
-            alt="blog cover"
-          />
-        )}
-      </div>
+      <ArticleHeading heading={article.title} />
+      <ArticleCover coverFilename={article.cover} />
+
       <div className="mt-10 mb-14 w-1/2 mx-auto border-gray-900 border-2">
         <div className="flex">
-          <span className="">
+          <span>
             image
             <br />
             <Link to={`/?user=${article.username}`}>{article.username}</Link>
@@ -80,6 +65,7 @@ const Article = () => {
           <ReactMarkdown>{article.desc}</ReactMarkdown>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

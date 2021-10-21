@@ -15,8 +15,7 @@ const Listing = ({ article }) => {
             className="w-80 h-44 object-cover cursor-pointer"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src =
-                "https://www.adobe.com/content/dam/cc/us/en/creativecloud/illustration-adobe-illustration/vector-art/desktop/vector-art_P1_900x420.jpg.img.jpg";
+              e.target.src = imageFolder + "default.jpg";
             }}
           />
         </Link>
