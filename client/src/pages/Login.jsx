@@ -31,7 +31,7 @@ const Login = () => {
   return (
     <>
       {isFetching ? (
-        <div className="font-body text-5xl text-center">Fetching...</div>
+        <div className="font-body text-2xl text-center">Fetching...</div>
       ) : (
         <div className="w-1/2 mx-auto text-center">
           <h1 className="font-heading text-5xl py-10">Login</h1>

@@ -43,14 +43,14 @@ const Register = () => {
             <label>Email</label>
             <input
               type="email"
-              className="ml-10 p-1 border-2 rounded-lg border-gray-400 "
+              className="ml-10 p-1 border-2 rounded-lg border-gray-400"
               placeholder="email"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
           <div className="pb-6">
-            <label className="">Password</label>
+            <label>Password</label>
             <input
               type="password"
               className="mx-8 p-1 border-2 rounded-lg border-gray-400"

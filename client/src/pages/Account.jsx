@@ -1,6 +1,7 @@
 //components
 import { useContext, useState } from "react";
 import axios from "axios";
+import Identicon from "react-identicons";
 
 //context
 import { Context } from "../context/Context";
@@ -53,50 +54,72 @@ const Account = () => {
 
   return (
     <>
-      <h1>this is account</h1>
-      <div>
-        <span> Update your account </span>
-        <span> Delete account </span>
+      <div className="w-1/2 mx-auto text-center">
+        <h1 className="font-heading text-5xl py-10">Account</h1>
+        <form onSubmit={handleSubmit} className="font-ui text-lg ">
+          <div className="pb-6">
+            <label>Profile picture</label>
+            {user?.displayImg ? (
+              <img
+                src={imageFolder + user.displayImg}
+                alt="Profile"
+                className="inline-flex w-12 h-12 mx-4 rounded-full object-cover"
+              />
+            ) : (
+              <Identicon
+                string={user._id}
+                size="70"
+                className="inline-flex w-12 h-12 mx-4 rounded-full object-scale-down"
+              />
+            )}
+
+            <label htmlFor="fileInput"></label>
+            <input
+              type="file"
+              id="fileInput"
+              className="mx-2 -mr-36"
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+          </div>
+
+          <div className="pb-6">
+            <label>Username</label>
+            <input
+              type="text"
+              className="mx-8 p-1 border-2 rounded-lg border-gray-400"
+              placeholder={user.username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+
+          <div className="pb-6">
+            <label>Email</label>
+            <input
+              type="email"
+              className="ml-10 p-1 border-2 rounded-lg border-gray-400"
+              placeholder={user.email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div className="pb-6">
+            <label className="">Password</label>
+            <input
+              type="password"
+              className="mx-8 p-1 border-2 rounded-lg border-gray-400"
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="text-center px-2 py-1 border-2 rounded-lg border-gray-400"
+          >
+            Update
+          </button>
+        </form>
       </div>
-      <form onSubmit={handleSubmit}>
-        <label>Profile picture</label>
-        <img
-          src={imageFolder + user.displayImg}
-          alt="Profile"
-          className="w-12 h-12 rounded-full object-cover"
-        />
-
-        <label htmlFor="fileInput"></label>
-        <input
-          type="file"
-          id="fileInput"
-          onChange={(e) => setFile(e.target.files[0])}
-        />
-
-        <label>Username</label>
-        <input
-          type="text"
-          className="border-2"
-          placeholder={user.username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-
-        <label>Email</label>
-        <input
-          type="email"
-          className="border-2"
-          placeholder={user.email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <label>Password</label>
-        <input
-          type="password"
-          className="border-2"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Update</button>
-      </form>
     </>
   );
 };
