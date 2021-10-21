@@ -14,6 +14,9 @@ module.exports = {
           DEFAULT: "#000",
         },
       },
+      height: {
+        cover: "38rem",
+      },
     },
   },
   variants: {
