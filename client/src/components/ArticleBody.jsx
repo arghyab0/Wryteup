@@ -27,15 +27,15 @@ const ArticleBody = ({ userData, articleData, handleDelete }) => {
       <div className="w-1/2 mx-auto mt-10 mb-14">
         <div className="flex items-center font-ui text-lg">
           <div>
-            {userData.displayImg ? (
+            {userData?.displayImg ? (
               <img
-                src={userData.displayImg}
+                src={userData?.displayImg}
                 alt="Account"
                 className="inline-flex w-12 h-12 mx-4 rounded-full object-cover"
               />
             ) : (
               <Identicon
-                string={userData._id}
+                string={userData?._id}
                 size="70"
                 className="inline-flex w-12 h-12 mx-4 rounded-full object-scale-down"
               />

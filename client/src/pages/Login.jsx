@@ -30,28 +30,37 @@ const Login = () => {
 
   return (
     <>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Username</label>
-        <input
-          type="text"
-          className="border-2"
-          placeholder="username"
-          onChange={(e) => setUsername(e.target.value)}
-        />
+      <div className="w-1/2 mx-auto text-center">
+        <h1 className="font-heading text-5xl py-10">Login</h1>
+        <form onSubmit={handleSubmit} className="font-ui text-lg ">
+          <div className="pb-6">
+            <label className="">Username</label>
+            <input
+              type="text"
+              className="mx-8 p-1 border-2 rounded-lg border-gray-400 "
+              placeholder="username"
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
 
-        <label>Password</label>
-        <input
-          type="password"
-          className="border-2"
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <div className="pb-6">
+            <label className="">Password</label>
+            <input
+              type="password"
+              className="mx-8 p-1 border-2 rounded-lg border-gray-400"
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-        <button type="submit" className="border-2">
-          Login
-        </button>
-      </form>
+          <button
+            type="submit"
+            className="text-center px-2 py-1 border-2 rounded-lg border-gray-400"
+          >
+            Login
+          </button>
+        </form>
+      </div>
     </>
   );
 };

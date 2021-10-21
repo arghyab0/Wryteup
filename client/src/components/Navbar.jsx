@@ -38,7 +38,7 @@ const Navbar = () => {
             </li>
           )}
           {user && (
-            <li className="mx-4" onClick={handleLogout}>
+            <li className="mx-4 cursor-pointer" onClick={handleLogout}>
               LOGOUT
             </li>
           )}
