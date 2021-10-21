@@ -1,6 +1,7 @@
 //components
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import Identicon from "react-identicons";
 
 //context
 import { Context } from "../context/Context";
@@ -44,16 +45,19 @@ const Navbar = () => {
         </ul>
         {user && (
           <Link to="/account">
-            <img
-              src={user.displayImg}
-              alt="Account"
-              className="inline-flex w-14 h-14 mx-4 rounded-full object-cover"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src =
-                  "https://animade.imgix.net/Plus-Plus%E2%80%94Teasers-0-00-26-09.png?crop=focalpoint&domain=animade.imgix.net&fit=crop&fm=pjpg&fp-x=0.5&fp-y=0.5&h=1450&ixlib=php-3.3.1&q=82&usm=20&w=1450";
-              }}
-            />
+            {user.displayImg ? (
+              <img
+                src={user.displayImg}
+                alt="Account"
+                className="inline-flex w-12 h-12 mx-4 rounded-full object-cover"
+              />
+            ) : (
+              <Identicon
+                string={user._id}
+                size="70"
+                className="inline-flex w-12 h-12 mx-4 rounded-full object-scale-down"
+              />
+            )}
           </Link>
         )}
       </div>

@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <>
       <Cover />
-      <Listings articles={articles} />
+      <Listings articles={articles} page="home" />
       <Footer />
     </>
   );
