@@ -49,13 +49,15 @@ const ArticleBody = ({ userData, articleData, handleDelete }) => {
             {new Date(articleData.createdAt).toDateString()}
           </div>
 
-          <div className="flex justify-end items-center p-1 rounded-xl border-2 border-gray-300">
-            <HiOutlineTrash
-              className="inline-flex text-2xl cursor-pointer"
-              onClick={handleDelete}
-            />{" "}
-            Delete
-          </div>
+          {articleData.username === userData?.username && (
+            <div className="flex justify-end items-center p-1 rounded-xl border-2 border-gray-300 cursor-pointer">
+              <HiOutlineTrash
+                className="inline-flex text-2xl"
+                onClick={handleDelete}
+              />{" "}
+              Delete
+            </div>
+          )}
         </div>
 
         <div className="mt-14">
