@@ -42,9 +42,12 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/articles", articlesRoute);
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build"));
-});
+if (process.env.NODE.ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client", "build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+}
 
 const port = process.env.PORT || 3080;
 
