@@ -1,6 +1,7 @@
 //init server
 const express = require("express");
 const app = express();
+const port = process.env.PORT || 3080;
 
 //imports
 const dotenv = require("dotenv");
@@ -42,4 +43,8 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/articles", articlesRoute);
 
-app.listen("3080", () => console.log("Server running at port 3080..."));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+app.listen(port, () => console.log(`Server running at port ${port}...`));

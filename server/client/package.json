@@ -2,6 +2,7 @@
   "name": "wryteup",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost/api",
   "dependencies": {
     "@craco/craco": "^6.3.0",
     "@tailwindcss/typography": "^0.4.1",
@@ -25,7 +26,6 @@
     "test": "craco test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3080/api",
   "eslintConfig": {
     "extends": [
       "react-app",
