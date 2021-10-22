@@ -5,13 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "client-install": "cd client && npm install",
-    "client-build": "cd client && npm run build",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm client-install npm && run client-build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "engines": {
-    "node": "10.16.0"
+    "node": "15.6.0"
   },
   "repository": {
     "type": "git",

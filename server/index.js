@@ -44,9 +44,8 @@ app.use("/articles", articlesRoute);
 
 // ----
 
-app.use(express.static(path.join(__dirname, "./client/build")));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build"));
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 const port = process.env.PORT || 3080;
