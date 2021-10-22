@@ -1,7 +1,6 @@
 //init server
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3080;
 
 //imports
 const dotenv = require("dotenv");
@@ -34,17 +33,22 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
-app.post("/api/upload", upload.single("file"), (req, res) => {
+app.post("/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File has been uploaded.");
 });
 
 //using routes
-app.use("/api/auth", authRoute);
-app.use("/api/users", usersRoute);
-app.use("/api/articles", articlesRoute);
+app.use("/auth", authRoute);
+app.use("/users", usersRoute);
+app.use("/articles", articlesRoute);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+// ----
+
+app.use(express.static(path.join(__dirname, "./client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build"));
+});
+
+const port = process.env.PORT || 3080;
 
 app.listen(port, () => console.log(`Server running at port ${port}...`));
