@@ -45,7 +45,7 @@ app.use("/articles", articlesRoute);
 // ----
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.join(__dirname, "client", "build"));
 });
 
 const port = process.env.PORT || 3080;
