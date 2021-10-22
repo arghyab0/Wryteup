@@ -5,18 +5,14 @@ import axios from "axios";
 import { HiOutlineTrash } from "react-icons/hi";
 import Identicon from "react-identicons";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import Listings from "./Listings";
 
 //assets
 import { ReactComponent as EyeIcon } from "../assests/eyeIcon.svg";
-import MdFile from "../assests/text.md";
-
-//markdown folder
-const mdFolder = "http://localhost:3080/markdown/";
 
 const ArticleBody = ({ userData, articleData, handleDelete }) => {
   const [articles, setArticles] = useState([]);
-  const [body, setBody] = useState("");
   const { search } = useLocation();
 
   useEffect(() => {
@@ -24,13 +20,8 @@ const ArticleBody = ({ userData, articleData, handleDelete }) => {
       const res = await axios.get("/articles" + search);
       setArticles(res.data);
     };
-    const fetchBody = async () => {
-      const res = await axios.get(MdFile);
-      setBody(res.data);
-    };
     fetchArticles();
-    fetchBody();
-  }, [search, body]);
+  }, [search]);
 
   return (
     <>
@@ -72,8 +63,9 @@ const ArticleBody = ({ userData, articleData, handleDelete }) => {
 
         <div className="mt-14">
           <div className="font-body text-lg leading-loose prose">
-            {/* {articleData.desc} */}
-            <ReactMarkdown>{body}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {articleData.desc}
+            </ReactMarkdown>
           </div>
         </div>
       </div>

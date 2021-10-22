@@ -37,30 +37,47 @@ const Write = () => {
 
   return (
     <>
-      <h1>this si wrote</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="fileInput"></label>
-        <input
-          type="file"
-          id="fileInput"
-          onChange={(e) => setFile(e.target.files[0])}
-        />
-        <input
-          type="text"
-          className="border-2"
-          placeholder="Title"
-          autoFocus={true}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <textarea
-          className="border-2"
-          placeholder="Tell your story"
-          onChange={(e) => setDesc(e.target.value)}
-        ></textarea>
-        <button type="submit" className="border-2">
-          Publish
-        </button>
-      </form>
+      <div className="w-1/2 mx-auto text-center">
+        <h1 className="font-heading text-5xl py-10">New article</h1>
+        <form onSubmit={handleSubmit} className="font-ui text-lg ">
+          <div className="pb-6">
+            <label htmlFor="fileInput">Article cover</label>
+            <input
+              type="file"
+              id="fileInput"
+              className="mx-2 -mr-36"
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+          </div>
+
+          <div className="pb-6">
+            <label className="">Article title</label>
+            <input
+              type="text"
+              className="mx-8 p-1 border-2 rounded-lg border-gray-400"
+              placeholder="title"
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+
+          <div className="pb-2">
+            <label className="">Article content (markdown supported!)</label>{" "}
+            <br />
+            <textarea
+              className="w-full h-96 p-1 border-2 rounded-lg border-gray-400"
+              placeholder="content"
+              onChange={(e) => setDesc(e.target.value)}
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            className="text-center px-2 py-1 border-2 rounded-lg border-gray-400"
+          >
+            Publish
+          </button>
+        </form>
+      </div>
     </>
   );
 };

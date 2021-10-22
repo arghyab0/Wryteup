@@ -37,7 +37,7 @@ const Login = () => {
           <h1 className="font-heading text-5xl py-10">Login</h1>
           <form onSubmit={handleSubmit} className="font-ui text-lg ">
             <div className="pb-6">
-              <label className="">Username</label>
+              <label>Username</label>
               <input
                 type="text"
                 className="mx-8 p-1 border-2 rounded-lg border-gray-400 "
@@ -47,7 +47,7 @@ const Login = () => {
             </div>
 
             <div className="pb-6">
-              <label className="">Password</label>
+              <label>Password</label>
               <input
                 type="password"
                 className="mx-8 p-1 border-2 rounded-lg border-gray-400"
