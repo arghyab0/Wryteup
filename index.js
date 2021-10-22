@@ -42,12 +42,12 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/articles", articlesRoute);
 
-// if (process.env.NODE.ENV === "production") {
-app.use(express.static(path.resolve(__dirname, "./client/build")));
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-});
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.resolve(__dirname, "./client/build")));
+  app.get("*", function (req, res) {
+    res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+  });
+}
 
 const port = process.env.PORT || 3080;
 
