@@ -5,10 +5,10 @@ const Footer = () => {
         <div className="w-4/5 md:w-1/2 mx-auto text-white text-center">
           <div className="font-brand text-3xl md:text-5xl my-8">WRYTEUP</div>
           <div className="text-sm md:text-base font-ui py-2 md:py-4">
-            A build by Arghya Biswas. Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Necessitatibus ad beatae, fugit animi explicabo
-            amet exercitationem deserunt voluptate quaerat soluta totam, nemo
-            illo. Quisquam, neque quae officia illo ut dolorem.
+            A build by Arghya Biswas. I am a final year CS undergrad student and
+            I enjoy building things that live on the internet. I aspire to be a
+            front-end engineer who can design and build user-friendly products
+            optimized for speed and scalability.
           </div>
           <div className="w-4/5 md:w-1/2 mx-auto my-4 md:my-8 flex justify-around text-sm md:text-base">
             <a
