@@ -52,6 +52,10 @@ const Account = () => {
     console.log(success);
   };
 
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
+
   return (
     <>
       <div className="w-1/2 mx-auto text-center">
@@ -119,6 +123,17 @@ const Account = () => {
             Update
           </button>
         </form>
+
+        <div className="my-6">OR</div>
+
+        {user && (
+          <button
+            className="text-center px-2 py-1 font-ui text-lg bg-red-500 text-white border-2 border-white rounded-lg"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+        )}
       </div>
     </>
   );

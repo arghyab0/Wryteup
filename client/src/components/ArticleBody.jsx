@@ -25,7 +25,7 @@ const ArticleBody = ({ userData, articleData, handleDelete }) => {
 
   return (
     <>
-      <div className="w-1/2 mx-auto mt-10 mb-32">
+      <div className="w-1/2 mx-auto mt-14 mb-32">
         <div className="flex items-center font-ui text-lg">
           <div>
             {userData?.displayImg ? (

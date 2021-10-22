@@ -1,5 +1,6 @@
 //components
 import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 //context
@@ -35,7 +36,7 @@ const Login = () => {
       ) : (
         <div className="w-1/2 mx-auto text-center">
           <h1 className="font-heading text-5xl py-10">Login</h1>
-          <form onSubmit={handleSubmit} className="font-ui text-lg ">
+          <form onSubmit={handleSubmit} className="font-ui text-lg">
             <div className="pb-6">
               <label>Username</label>
               <input
@@ -63,6 +64,12 @@ const Login = () => {
               Login
             </button>
           </form>
+
+          <div className="my-6">OR</div>
+
+          <button className="text-center px-2 py-1 font-ui text-lg bg-green-600 text-white border-2 border-white rounded-lg">
+            <Link to="/register">Register</Link>
+          </button>
         </div>
       )}
     </>
