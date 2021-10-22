@@ -9,9 +9,14 @@ import Listings from "./Listings";
 
 //assets
 import { ReactComponent as EyeIcon } from "../assests/eyeIcon.svg";
+import MdFile from "../assests/text.md";
+
+//markdown folder
+const mdFolder = "http://localhost:3080/markdown/";
 
 const ArticleBody = ({ userData, articleData, handleDelete }) => {
   const [articles, setArticles] = useState([]);
+  const [body, setBody] = useState("");
   const { search } = useLocation();
 
   useEffect(() => {
@@ -19,8 +24,13 @@ const ArticleBody = ({ userData, articleData, handleDelete }) => {
       const res = await axios.get("/articles" + search);
       setArticles(res.data);
     };
+    const fetchBody = async () => {
+      const res = await axios.get(MdFile);
+      setBody(res.data);
+    };
     fetchArticles();
-  }, [search]);
+    fetchBody();
+  }, [search, body]);
 
   return (
     <>
@@ -61,9 +71,10 @@ const ArticleBody = ({ userData, articleData, handleDelete }) => {
         </div>
 
         <div className="mt-14">
-          <ReactMarkdown className="font-body text-lg leading-loose">
-            {articleData.desc}
-          </ReactMarkdown>
+          <div className="font-body text-lg leading-loose prose">
+            {/* {articleData.desc} */}
+            <ReactMarkdown>{body}</ReactMarkdown>
+          </div>
         </div>
       </div>
 
