@@ -10,27 +10,27 @@ const Navbar = () => {
   const { user } = useContext(Context);
 
   return (
-    <div className="w-screen h-20 md:h-32 top-0 flex items-center border-b border-gray-300">
+    <div className="w-screen h-24 md:h-32 top-0 flex items-center border-b border-gray-300">
       <div className="mx-4 md:mx-12">
-        <h1 className="text-2xl md:text-6xl font-heading">
+        <h1 className="text-2xl md:text-6xl font-brand">
           <Link to="/">Wryteup</Link>
         </h1>
       </div>
 
       <div className="flex w-screen justify-end items-center mx-6 md:mx-10 ">
-        <ul className="inline-flex list-none font-heading text-lg md:text-2xl ">
+        <ul className="inline-flex list-none font-brand text-base md:text-2xl ">
           {user && (
-            <li className="mx-2 md:mx-4">
+            <li className="mx-3 md:mx-4">
               <Link to="/write">WRITE</Link>
             </li>
           )}
           {!user && (
-            <li className="mx-2 md:mx-4">
+            <li className="mx-3 md:mx-4">
               <Link to="/">ARTICLES</Link>
             </li>
           )}
           {!user && (
-            <li className="mx-2 md:mx-4">
+            <li className="mx-3 md:mx-4">
               <Link to="/login">LOGIN</Link>
             </li>
           )}

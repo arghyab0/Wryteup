@@ -7,6 +7,7 @@ module.exports = {
         body: ["Libre Baskerville"],
         heading: ["DM Serif Display"],
         ui: ["Work Sans"],
+        brand: ["Cinzel"],
       },
       colors: {
         black: {
