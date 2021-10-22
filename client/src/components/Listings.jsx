@@ -4,9 +4,9 @@ import Listing from "./Listing";
 const Listings = ({ articles, page }) => {
   return (
     <>
-      <div className="w-screen pt-16 pb-10">
+      <div className="w-screen pt-6 md:pt-16 pb-4 md:pb-10">
         {page === "home" && (
-          <div className="w-3/5 mx-auto py-8 font-heading font-bold text-5xl text-center">
+          <div className="w-3/5 mx-auto py-10 font-heading font-bold text-4xl md:text-5xl text-center">
             All articles
           </div>
         )}
