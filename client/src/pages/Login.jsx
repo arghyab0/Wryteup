@@ -34,14 +34,16 @@ const Login = () => {
       {isFetching ? (
         <div className="font-body text-2xl text-center">Fetching...</div>
       ) : (
-        <div className="w-1/2 mx-auto text-center">
-          <h1 className="font-heading text-5xl py-10">Login</h1>
+        <div className="mx-2 md:w-1/2 md:mx-auto text-center">
+          <h1 className="font-heading text-4xl md:text-5xl py-6 md:py-10">
+            Login
+          </h1>
           <form onSubmit={handleSubmit} className="font-ui text-lg">
             <div className="pb-6">
               <label>Username</label>
               <input
                 type="text"
-                className="mx-8 p-1 border-2 rounded-lg border-gray-400 "
+                className="mx-2 md:mx-8 p-1 border-2 rounded-lg border-gray-400 "
                 placeholder="username"
                 onChange={(e) => setUsername(e.target.value)}
               />
@@ -51,7 +53,7 @@ const Login = () => {
               <label>Password</label>
               <input
                 type="password"
-                className="mx-8 p-1 border-2 rounded-lg border-gray-400"
+                className="mx-2 md:mx-8 p-1 border-2 rounded-lg border-gray-400"
                 placeholder="password"
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -65,7 +67,7 @@ const Login = () => {
             </button>
           </form>
 
-          <div className="my-6">OR</div>
+          <div className="my-4 md:my-6">OR</div>
 
           <button className="text-center px-2 py-1 font-ui text-lg bg-green-600 text-white border-2 border-white rounded-lg">
             <Link to="/register">Register</Link>
