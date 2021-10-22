@@ -58,8 +58,10 @@ const Account = () => {
 
   return (
     <>
-      <div className="w-1/2 mx-auto text-center">
-        <h1 className="font-heading text-5xl py-10">Account</h1>
+      <div className="mx-2 md:w-1/2 md:mx-auto text-center">
+        <h1 className="font-heading text-4xl md:text-5xl py-6 md:py-10">
+          Account
+        </h1>
         <form onSubmit={handleSubmit} className="font-ui text-lg ">
           <div className="pb-6">
             <label>Profile picture</label>
@@ -67,13 +69,13 @@ const Account = () => {
               <img
                 src={imageFolder + user.displayImg}
                 alt="Profile"
-                className="inline-flex w-12 h-12 mx-4 rounded-full object-cover"
+                className="inline-flex w-12 h-12 mx-2 md:mx-4 rounded-full object-cover"
               />
             ) : (
               <Identicon
                 string={user._id}
                 size="70"
-                className="inline-flex w-12 h-12 mx-4 rounded-full object-scale-down"
+                className="inline-flex w-12 h-12 mx-2 md:mx-4 rounded-full object-scale-down"
               />
             )}
 
@@ -90,7 +92,7 @@ const Account = () => {
             <label>Username</label>
             <input
               type="text"
-              className="mx-8 p-1 border-2 rounded-lg border-gray-400"
+              className="mx-2 md:mx-8 p-1 border-2 rounded-lg border-gray-400"
               placeholder={user.username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -100,7 +102,7 @@ const Account = () => {
             <label>Email</label>
             <input
               type="email"
-              className="ml-10 p-1 border-2 rounded-lg border-gray-400"
+              className="mx-2 md:mx-8  p-1 border-2 rounded-lg border-gray-400"
               placeholder={user.email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -110,7 +112,7 @@ const Account = () => {
             <label className="">Password</label>
             <input
               type="password"
-              className="mx-8 p-1 border-2 rounded-lg border-gray-400"
+              className="mx-2 md:mx-8 p-1 border-2 rounded-lg border-gray-400"
               placeholder="password"
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -124,7 +126,7 @@ const Account = () => {
           </button>
         </form>
 
-        <div className="my-6">OR</div>
+        <div className="my-4 md:my-6">OR</div>
 
         {user && (
           <button
