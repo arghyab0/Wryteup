@@ -25,20 +25,20 @@ const ArticleBody = ({ userData, articleData, handleDelete }) => {
 
   return (
     <>
-      <div className="w-1/2 mx-auto mt-14 mb-32">
+      <div className="md:w-1/2 mx-4 md:mx-auto mt-10 md:mt-14 mb-24 md:mb-32">
         <div className="flex items-center font-ui text-lg">
           <div>
             {userData?.displayImg ? (
               <img
                 src={userData?.displayImg}
                 alt="Account"
-                className="inline-flex w-12 h-12 mx-4 rounded-full object-cover"
+                className="inline-flex w-10 md:w-12 h-10 md:h-12 mx-2 md:mx-4 rounded-full object-cover"
               />
             ) : (
               <Identicon
                 string={userData?._id}
                 size="70"
-                className="inline-flex w-12 h-12 mx-4 rounded-full object-scale-down"
+                className="inline-flex w-10 md:w-12 h-10 md:h-12 mx-2 md:mx-4 rounded-full object-scale-down"
               />
             )}
           </div>
@@ -53,7 +53,7 @@ const ArticleBody = ({ userData, articleData, handleDelete }) => {
           {articleData.username === userData?.username && (
             <div className="flex justify-end items-center p-1 rounded-xl border-2 border-gray-300 cursor-pointer">
               <HiOutlineTrash
-                className="inline-flex text-2xl"
+                className="inline-flex text-xl md:text-2xl"
                 onClick={handleDelete}
               />{" "}
               Delete
@@ -72,10 +72,10 @@ const ArticleBody = ({ userData, articleData, handleDelete }) => {
 
       <div className="w-screen border-t-2 border-black relative">
         <EyeIcon className="w-screen text-center z-50 absolute -top-8" />
-        <div className="text-center font-heading text-5xl pt-24">
+        <div className="text-center font-heading text-3xl md:text-5xl pt-16 md:pt-24">
           What to read next
         </div>
-        <div className="pb-10">
+        <div className="pv-2 md:pb-10">
           <Listings articles={articles} page="article" />
         </div>
       </div>

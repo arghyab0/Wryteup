@@ -5,7 +5,7 @@ const ArticleCover = ({ coverFilename }) => {
   return (
     <>
       <img
-        className="w-screen h-cover object-cover my-2"
+        className="w-screen h-96 md:h-cover object-cover my-2"
         src={imageFolder + coverFilename}
         alt="Article cover"
         onError={(e) => {

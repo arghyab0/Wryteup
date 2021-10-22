@@ -10,7 +10,7 @@ const Footer = () => {
             amet exercitationem deserunt voluptate quaerat soluta totam, nemo
             illo. Quisquam, neque quae officia illo ut dolorem.
           </div>
-          <div className="w-4/5 md:w-1/2 mx-auto my-4 md:my-8 flex justify-around">
+          <div className="w-4/5 md:w-1/2 mx-auto my-4 md:my-8 flex justify-around text-sm md:text-base">
             <a
               className="border-b"
               href="https://arghyabiswas.me/"
