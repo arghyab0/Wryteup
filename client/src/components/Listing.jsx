@@ -1,21 +1,21 @@
 //components
 import { Link } from "react-router-dom";
 
-const Listing = ({ article }) => {
-  //cover image folder
-  const imageFolder = "http://localhost:3080/images/";
+//assets
+import DefaultCover from "../assests/default.jpg";
 
+const Listing = ({ article }) => {
   return (
     <>
       <div className="mb-4 md:mb-6">
         <Link to={`/articles/${article._id}`}>
           <img
-            src={imageFolder + article.cover}
+            src={article.cover}
             alt="Article cover"
             className="w-80 h-44 object-cover cursor-pointer"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = imageFolder + "default.jpg";
+              e.target.src = { DefaultCover };
             }}
           />
         </Link>
