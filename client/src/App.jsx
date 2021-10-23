@@ -26,17 +26,25 @@ function App() {
             <Home />
           </Route>
 
-          <Route path="/register">{user ? <Home /> : <Register />}</Route>
+          <Route exact path="/register">
+            {user ? <Home /> : <Register />}
+          </Route>
 
-          <Route path="/login">{user ? <Home /> : <Login />}</Route>
+          <Route exact path="/login">
+            {user ? <Home /> : <Login />}
+          </Route>
 
-          <Route path="/articles/:article._id">
+          <Route exact path="/articles/:article._id">
             <Article />
           </Route>
 
-          <Route path="/write">{user ? <Write /> : <Register />}</Route>
+          <Route exact path="/write">
+            {user ? <Write /> : <Register />}
+          </Route>
 
-          <Route path="/account">{user ? <Account /> : <Register />}</Route>
+          <Route exact path="/account">
+            {user ? <Account /> : <Register />}
+          </Route>
         </Switch>
       </div>
     </Router>
