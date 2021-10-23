@@ -1,27 +1,19 @@
-
 # Wryteup
 
-### A fast, minimalistic markdown supported blogging platform 
+A fast, minimalistic markdown supported blogging platform
 
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs) [![Twitter Follow](https://img.shields.io/twitter/follow/arghyab0?style=social)](https://twitter.com/intent/follow?screen_name=arghyab0)
 
+![App demo](https://raw.githubusercontent.com/arghyab0/Wryteup/main/client/src/assets/demo.gif)
 
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-[![Twitter Follow](https://img.shields.io/twitter/follow/arghyab0?style=social)](https://twitter.com/intent/follow?screen_name=arghyab0)
-  
-## Demo
-
-Insert gif or link to demo
-
-  
 ## ✨ Features
 
 - Basic user authentication
 - Add, view and delete blogs
+- Add blog cover image links
 - Markdown supported
-- 
+- Fully responsive
 
-
-  
 ## 🛠 Tech Stack
 
 **Frontend:** React, Context API, TailwindCSS
@@ -29,6 +21,7 @@ Insert gif or link to demo
 **Backend:** ExpressJS, MongoDB
 
 **Deployement:** Heroku
+
 ## 📂 What's inside?
 
 ```
