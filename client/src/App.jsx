@@ -30,7 +30,7 @@ function App() {
 
           <Route path="/login">{user ? <Home /> : <Login />}</Route>
 
-          <Route path="/articles/article._id">
+          <Route path="/articles/:article._id">
             <Article />
           </Route>
 
