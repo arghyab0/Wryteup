@@ -26,11 +26,6 @@ const Navbar = () => {
           )}
           {!user && (
             <li className="mx-2 md:mx-4">
-              <Link to="/">ARTICLES</Link>
-            </li>
-          )}
-          {!user && (
-            <li className="mx-2 md:mx-4">
               <Link to="/login">LOGIN</Link>
             </li>
           )}
