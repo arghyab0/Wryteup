@@ -34,7 +34,7 @@ function App() {
             {user ? <Home /> : <Login />}
           </Route>
 
-          <Route exact path="/articles/:article._id">
+          <Route path="/articles/:articleId">
             <Article />
           </Route>
 
