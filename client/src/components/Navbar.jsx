@@ -10,7 +10,7 @@ const Navbar = () => {
   const { user } = useContext(Context);
 
   return (
-    <div className="w-screen h-24 md:h-32 top-0 flex items-center border-b border-gray-300">
+    <div className="w-screen h-20 md:h-32 top-0 flex items-center border-b border-gray-300">
       <div className="mx-4 md:mx-12">
         <h1 className="text-2xl md:text-6xl font-brand">
           <Link to="/">Wryteup</Link>

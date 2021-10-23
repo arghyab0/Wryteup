@@ -8,14 +8,13 @@ import Loading from "./Loading";
 import { Context } from "../context/Context";
 
 const Account = () => {
-  const [file, setFile] = useState(null);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [displayImg, setDisplayImg] = useState(null);
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch, isFetching } = useContext(Context);
-  const imageFolder = "http://localhost:3080/images/";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,21 +26,22 @@ const Account = () => {
       username,
       email,
       password,
+      displayImg,
     };
 
-    if (file) {
-      const data = new FormData();
-      const filename = Date.now() + file.name;
-      data.append("name", filename);
-      data.append("file", file);
-      updatedUser.displayImg = filename;
+    // if (file) {
+    //   const data = new FormData();
+    //   const filename = Date.now() + file.name;
+    //   data.append("name", filename);
+    //   data.append("file", file);
+    //   updatedUser.displayImg = filename;
 
-      try {
-        await axios.post("/upload", data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
+    //   try {
+    //     await axios.post("/upload", data);
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // }
 
     try {
       const res = await axios.put("/users/" + user._id, updatedUser);
@@ -71,7 +71,7 @@ const Account = () => {
               <label>Profile picture</label>
               {user?.displayImg ? (
                 <img
-                  src={imageFolder + user.displayImg}
+                  src={user.displayImg}
                   alt="Profile"
                   className="inline-flex w-12 h-12 mx-2 md:mx-4 rounded-full object-cover"
                 />
@@ -82,13 +82,17 @@ const Account = () => {
                   className="inline-flex w-12 h-12 mx-2 md:mx-4 rounded-full object-scale-down"
                 />
               )}
-
-              <label htmlFor="fileInput"></label>
-              <input
+              {/* <input
                 type="file"
                 id="fileInput"
                 className="mx-2 -mr-36"
                 onChange={(e) => setFile(e.target.files[0])}
+              /> */}
+              <input
+                type="text"
+                className="mx-2 p-1 border-2 rounded-lg border-gray-400"
+                placeholder="New image link"
+                onChange={(e) => setDisplayImg(e.target.value)}
               />
             </div>
 
