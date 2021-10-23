@@ -18,7 +18,7 @@ dotenv.config();
 
 //middleware
 app.use(express.json());
-app.use("/images", express.static(path.join(__dirname, "/images")));
+app.use("/images", express.static("/images"));
 
 //mongoose connection
 mongoose
