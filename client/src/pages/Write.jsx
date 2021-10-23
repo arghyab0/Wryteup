@@ -15,19 +15,7 @@ const Write = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newArticle = { username: user.username, cover, title, desc };
-    // if (file) {
-    //   const data = new FormData();
-    //   const filename = Date.now() + file.name;
-    //   data.append("name", filename);
-    //   data.append("file", file);
-    //   newArticle.cover = filename;
 
-    //   try {
-    //     await axios.post("/upload", data);
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // }
     try {
       const res = await axios.post("/articles", newArticle);
       window.location.replace("/articles/" + res.data._id);
@@ -48,12 +36,6 @@ const Write = () => {
           <form onSubmit={handleSubmit} className="font-ui text-lg ">
             <div className="pb-6">
               <label htmlFor="fileInput">Article cover</label>
-              {/* <input
-                type="file"
-                id="fileInput"
-                className="mx-2 -mr-36"
-                onChange={(e) => setFile(e.target.files[0])}
-              /> */}
               <input
                 type="text"
                 className="mx-2 md:mx-8 p-1 border-2 rounded-lg border-gray-400"

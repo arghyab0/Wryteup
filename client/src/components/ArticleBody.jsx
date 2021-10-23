@@ -25,7 +25,7 @@ const ArticleBody = ({ userData, articleData, handleDelete }) => {
 
   return (
     <>
-      <div className="md:w-1/2 mx-4 md:mx-auto mt-10 md:mt-14 mb-24 md:mb-32">
+      <div className="md:w-1/2 mx-4 md:mx-auto mt-10 md:mt-14 mb-28 md:mb-32">
         <div className="flex items-center font-ui text-lg">
           <div>
             {userData?.displayImg ? (
@@ -62,7 +62,7 @@ const ArticleBody = ({ userData, articleData, handleDelete }) => {
         </div>
 
         <div className="mt-14">
-          <div className="font-body text-lg leading-loose prose">
+          <div className="font-body text-base md:text-lg leading-loose prose">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {articleData.desc}
             </ReactMarkdown>

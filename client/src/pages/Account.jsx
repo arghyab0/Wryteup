@@ -29,20 +29,6 @@ const Account = () => {
       displayImg,
     };
 
-    // if (file) {
-    //   const data = new FormData();
-    //   const filename = Date.now() + file.name;
-    //   data.append("name", filename);
-    //   data.append("file", file);
-    //   updatedUser.displayImg = filename;
-
-    //   try {
-    //     await axios.post("/upload", data);
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // }
-
     try {
       const res = await axios.put("/users/" + user._id, updatedUser);
       setSuccess(true);
@@ -82,12 +68,6 @@ const Account = () => {
                   className="inline-flex w-12 h-12 mx-2 md:mx-4 rounded-full object-scale-down"
                 />
               )}
-              {/* <input
-                type="file"
-                id="fileInput"
-                className="mx-2 -mr-36"
-                onChange={(e) => setFile(e.target.files[0])}
-              /> */}
               <input
                 type="text"
                 className="mx-2 p-1 border-2 rounded-lg border-gray-400"
