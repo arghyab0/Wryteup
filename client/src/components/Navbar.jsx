@@ -18,7 +18,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex w-screen justify-end items-center mx-6 md:mx-10 ">
-        <ul className="inline-flex list-none font-brand text-lg md:text-2xl ">
+        <ul className="inline-flex list-none font-brand text-sm md:text-2xl ">
           {user && (
             <li className="mx-2 md:mx-4">
               <Link to="/write">WRITE</Link>
