@@ -1,6 +1,6 @@
 //components
 import { useState, useEffect, useContext } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import ArticleHeading from "../components/ArticleHeading";
 import ArticleCover from "../components/ArticleCover";
@@ -14,23 +14,24 @@ import { Context } from "../context/Context";
 const Article = () => {
   const [article, setArticle] = useState({});
   const [loaded, setLoaded] = useState(false);
-  const location = useLocation();
-  const pathId = location.pathname.split("/")[2];
+  // const location = useLocation();
+  // const pathId = location.pathname.split("/")[2];
+  const { articleId } = useParams();
 
   const { user } = useContext(Context);
 
   useEffect(() => {
     const getArticle = async () => {
-      const res = await axios.get("/articles/" + pathId);
+      const res = await axios.get("/articles/" + articleId);
       setArticle(res.data);
       setLoaded(true);
     };
     getArticle();
-  }, [pathId]);
+  }, [articleId]);
 
   const handleDelete = async () => {
     try {
-      await axios.delete("/articles/" + pathId, {
+      await axios.delete("/articles/" + articleId, {
         data: { username: user.username },
       });
       window.location.replace("/");
