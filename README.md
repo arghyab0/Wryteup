@@ -4,7 +4,7 @@ A fast, minimalistic markdown supported blogging platform
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs) [![Twitter Follow](https://img.shields.io/twitter/follow/arghyab0?style=social)](https://twitter.com/intent/follow?screen_name=arghyab0)
 
-![App demo](https://raw.githubusercontent.com/arghyab0/Wryteup/main/client/src/assets/demo.gif)
+![Demo](./client/src/assests/demo.mov)
 
 ## ✨ Features
 
