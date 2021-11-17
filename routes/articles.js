@@ -58,7 +58,7 @@ router.put("/:id", async (req, res) => {
         );
         res.status(200).json(updatedArticle);
       } catch (err) {
-        es.status(500).json(err);
+        res.status(500).json(err);
       }
     } else {
       res.status(400).json("You can update only your articles.");
@@ -77,7 +77,7 @@ router.delete("/:id", async (req, res) => {
         await article.delete();
         res.status(200).json("Article is deleted.");
       } catch (err) {
-        es.status(500).json(err);
+        res.status(500).json(err);
       }
     } else {
       res.status(400).json("You can delete only your articles.");
